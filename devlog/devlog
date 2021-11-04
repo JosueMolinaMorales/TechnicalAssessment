@@ -1,7 +1,58 @@
 Josue Molina Morales Dev Log Updates:
 
-November 3rd 2021
-  Assigned the technical assessment
-  Looked over root README.md
-  Downloaded all required materials (Node.js, Angular, Postman)
+Assigned the technical assessment
+Looked over root README.md
+Downloaded all required materials (Node.js, Angular, Postman)
   
+8 total task, complete minimum of 4 tasks
+
+Backend: Using NodeJS and Express
+  November 3rd 2021:
+    Since I am not too familiar Javascript, I will spend some time understanding the language.
+    
+    Read the README.md
+    "Create the Quests module for this application." 
+    What are routes? Googled "What are routes in web development?"
+      "Routing or router in web development is a mechanism where HTTP requests are routed to the code that handles them.
+      In the Router you determine what should heppen when a user visits a certain page" - Divpusher
+      Route::get('/test', function(){
+          return "Hello World";
+      });
+      When someone opens the website /test/ subpage, it will display a Hello World text.
+     
+     I Googled "What are POST request?" and got a link to w3schools about HTTP Methods
+      GET -> used to request data from a specified resource
+      POST -> used to send data to a server to create/update a resource
+      
+    From Expressjs api:
+      express.Router([options]) -> creates a new router object
+      A router object is an instance of middleware and routes.
+      
+      Application
+        The App object denotes the express application. 
+        The app object has methods for:
+          Routing HTTP requests
+          Configuring middleware
+          rendering HTML views
+      
+    What does this mean?
+    app.get('/', (req, res) => {
+        res.send('Welcome to the Backend API!');
+    });
+    From looking at expressjs.com app.METHOD(PATH, HANDLER)
+    METHOD -> HTTPS request method
+    HANDLER -> function executed when the route is matched
+    app -> instance of express
+    so get is our method, the current path is the homepage, and the handler just responds with "Welcome to Backend API!" on the homepage
+    
+    Routes provided: 
+      Get all herores
+        GET http://localhost:3000/heroes
+        HTPP Status Code: 200
+        Response Body: An Array of heroes
+        
+    Added Quest.js which is a class for quest objects that will be stored in QuestDS.js
+    Coded out QuestDS.js with help from HeroDS.js
+    
+  
+Frontend:

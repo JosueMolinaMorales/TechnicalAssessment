@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">
+        Testing
+    </p>
+
+    <button type="button" onclick="window.alert('You clicked me!')">Test</button>
+    <script>
+        document.write("IM IN SCRIPT");
+        window.alert(5+6);
+    </script>
+</body>
+<script>
+    /*
+        Javascript keywords:
+        var -> declares a variable
+        let -> declares a block variable
+        const -> declares a block constant
+        function -> declares a function
+
+        A variable declared without a value will have the value undefined
+
+        Variables defined with let cannot be redeclared
+        Variables defined with let must be declared before use
+        variables defnied with let have block scope
+
+        Const does not define a constant value. It defines a constant reference to a vlaue
+        You can NOT: Reassign a constant value, array, object
+        You CAN: change the elements of constant array, properties of constant object
+
+        Javascript types are dynamic, similar to python
+
+        Arrays are written with square brackets -> const cars = ["test1", "test2", "test3"];
+
+        Objects -> 
+        const person = {
+            firstName = "Jake",
+            lastName = "Law",
+            birthyear = 2004
+            calcAge = function(){
+                return 2021 - this.birthyear;
+            }
+        };
+        person.firstname; -> returns jake
+        person["firstname"] -> returns jake
+        Object Methods -> Methods are stored in properties as function defintions
+        person.calcAge() -> returns age
+
+        Javascript arrow functions
+        before:
+            hello = function(){
+                return "Hello World";
+            }
+        after:
+            hello = () =>{
+                return "hello world!";
+            }
+
+        Class Syntax:
+            class ClassName{
+                constuctor(){....}
+            }
+
+        Javascript JSON:
+            JSON is a format for storing and transporting data
+            JSON is often used when data is sent from a server to a web page
+            What is JSON?
+            JSON stands for JavaScript Object Notation
+                is a lightweight data interchange format
+                is langauge independent
+            JSON example:
+            This Example defines an employees object: an array of 3 employee records (objects)
+                {
+                    "Employees":[
+                        {"Firstname":"John", "lastname":"Doe"},
+                        {"firstname":"Anna", "lastname":"Smith"},
+                        {"firstname":"Peter", "lastname":"Jones"}
+                    ]
+                }
+            JSON Syntax Rules
+                Data is in name/value pairs
+                Data is separated by commas
+                Curly braces hold objects
+                Square brackets hold arrays
+
+            Converting a JSON text to a javascript object
+                let text = ' "Employees":[
+                        {"Firstname":"John", "lastname":"Doe"},
+                        {"firstname":"Anna", "lastname":"Smith"},
+                        {"firstname":"Peter", "lastname":"Jones"}
+                    ]
+                }';
+                const obj = JSON.parse(text);
+            Converting an object to JSON: JSON.stringify()
+
+    */
+</script>
+</html>

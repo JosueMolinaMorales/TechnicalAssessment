@@ -42,10 +42,50 @@ export function questsRouter() {
     /**
      * Updating a quest for a hero
      */
-    router.patch('/heroes/:id/quests/:questid', (req, res) => {
+    router.patch('/heroes/:heroid/quests/:questid', (req, res) => {
+        //get both ids
+        const heroId = req.params.heroid;
+        const questId = req.params.questid;
+        const hero = HeroesDB.getInstance().getHero(heroId)
+        const quest = QuestsDB.getInstance().getQuest(questId)
+
+        //check to see if both ids are valid
+        if(!hero || !quest){
+            //either heroId or questId is invalid
+            res.sendStatus(404);
+        }else if(quest.heroId != heroId){
+            //This checks to see if the given heroId does not match the quests' hero id
+            res.sendStatus(400);
+        }else{//both ids are valid and ids match 
+            const body = req.body; //get infor for new quest
+            QuestsDB.getInstance().updateQuest(questId,body);
+            res.sendStatus(204)
+        }
         
     });
+
     // TODO: Task 4
+    /**
+     * Delete a quest
+     */
+    router.delete('/heroes/:heroid/quests/:questid', (req, res) =>{
+        const heroId = req.params.heroid;
+        const questId = req.params.questid;
+        const hero = HeroesDB.getInstance().getHero(heroId)
+        const quest = QuestsDB.getInstance().getQuest(questId)
+
+        //check to see if both ids are valid
+        if(!hero || !quest){
+            //either heroId or questId is invalid
+            res.sendStatus(404);
+        }else if(quest.heroId != heroId){
+            //This checks to see if the given heroId does not match the quests' hero id
+            res.sendStatus(400);
+        }else{//both ids are valid and ids match 
+            QuestsDB.getInstance().deleteQuest(questId);
+            res.sendStatus(204);
+        }
+    });
 
     return router;
 }

@@ -23,7 +23,7 @@ export class QuestsDB{
 
     /**
      * Gets all the quests
-     * @returns an array of the quests
+     * @returns {Quest[]} an array of the quests
      */
     getQuests(){
         return this.quests;
@@ -32,7 +32,7 @@ export class QuestsDB{
     /**
      * Gets a specific Quest given an ID
      * @param {string} id indentifier to find the quest 
-     * @returns the quest if found
+     * @returns {Quest} the quest if found
      */
     getQuest(id){
         return this.quests.find(quest => quest.id === id);
@@ -68,10 +68,10 @@ export class QuestsDB{
      * @param {Partial<Quest>} questUpdates A partial quest object 
      */
     updateQuest(id, questUpdates){
-        const quest = this.getQuest(id);
-        this.deleteQuest(id);
-        quest.updateQuest(questUpdates);
-        this.addQuest(quest);
+        const quest = this.getQuest(id); //get the quest
+        this.deleteQuest(id); //delete the quest from the DB
+        quest.updateQuest(questUpdates); //update the quest with the partial quest
+        this.addQuest(quest); //add the quest back to the DB
     }
 
     /**

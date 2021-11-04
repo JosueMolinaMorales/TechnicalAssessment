@@ -15,7 +15,7 @@ app.use(cors({ origin: true }));
 
 // The routers of the app
 app.use(heroesRouter());
-//app.use(questsRouter());
+app.use(questsRouter());
 
 // Initial base route
 app.get('/', (req, res) => {

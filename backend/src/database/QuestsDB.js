@@ -34,6 +34,21 @@ export class QuestsDB{
     }
 
     /**
+     * Gets an array of quests for a hero
+     * @param {String} heroId Id for a hero  
+     * @returns the quests
+     */
+    getHeroQuests(heroId){
+        let quests = []
+        this.quests.forEach(element => {
+            if(element.heroId === heroId){
+                quests.push(element);
+            }
+        });
+        return quests;
+    }
+
+    /**
      * Adds a quest to the database
      * @param {Quest} quest The quest to add to the database 
      */

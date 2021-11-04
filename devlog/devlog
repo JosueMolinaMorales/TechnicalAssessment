@@ -57,13 +57,17 @@ Backend: Using NodeJS and Express
   November 4th 2021
       Got a better understanding of what the tasks were asking me to do. 
       Task 1 -> Getting quests for a hero. Will be given a heros ID and you need to return an array of all the heros quests, misunderstood that yesterday.
-      I redid a method getHeroQuest() to getHeroQuests() and looped through the quest array and if a quest hero id match the id given, store in array that 
-      will be returned
-      Not sure how i would test this. 
-      3pm update: hardcoded a hero object into the heroDB and a quest object into the questDB and made sure that when a request was made with a hero id e.g. /heroes/123/quest will return an array of quests for the hero id 123. I ran into an issue where I requested hero that did not exists, I would get an empty array back and not a 404 error not found.
-      I figured out that since getQuests() returns an empty array if no quests are found, 
-      if(!quests) was always going to be false since quests would never be undefined so i changed the if to if(quests.length == 0) to say if there are no quests then 404 not found. This worked but did not handle the case where a given heroId was valid but had no quests, it would return 404 not found, when it should return an empty array.
-      To fix this i changed the if statement to if(!HeroesDB.getInstance().getHero(heroId)).
+        I redid a method getHeroQuest() to getHeroQuests() and looped through the quest array and if a quest hero id match the id given, store in array that 
+        will be returned
+        Not sure how i would test this. 
+        3pm update: hardcoded a hero object into the heroDB and a quest object into the questDB and made sure that when a request was made with a hero id 
+        e.g. /heroes/123/quest will return an array of quests for the hero id 123. I ran into an issue where I requested hero that did not exists, I would 
+        get an empty array back and not a 404 error not found.
+        I figured out that since getQuests() returns an empty array if no quests are found, 
+        if(!quests) was always going to be false since quests would never be undefined so i changed the if to if(quests.length == 0) to say if there are 
+        no quests then 404 not found. This worked but did not handle the case where a given heroId was valid but had no quests, it would return 404 not found, 
+        when it should return an empty array.
+        To fix this i changed the if statement to if(!HeroesDB.getInstance().getHero(heroId)).
 
       At the end of task 1 I started using postman to help me test all the routers
 
@@ -71,5 +75,17 @@ Backend: Using NodeJS and Express
       To Start this, i first got familiar with how to POST something in postman. and tested out the hero router by creating a couple of heros.
       Coded out router.post() to create a quest. Didn't have too many issues.
       
+      Task 3 -> Update a quest -> 204 if quest was updated -> 400 route hero id does not match the quest heroid in the database 
+        -> 404 hero or quest was not found for given ids
+        For this task i know that i am going to need two ids. One for the hero and one for the quest. 
+        First I will check to see if the given Ids exists in the heroDB and the questDB if not then send 404
+        Every quest has a hero id attribute so if the heroid does not match the given quest id's heroid then send 400.
+        else update the quest
+      
+      Task 4 -> Delete a quest -> 204 quest was deleted in the database -> 400 route hero id does not match the quest heroid in the database 
+        -> 404 hero or quest was not found for given ids
+        For this task , it seems like i will be check the same conditions as the previous task.
+        
+      Finished all 4 backend tasks!
   
 Frontend:

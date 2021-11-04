@@ -9,9 +9,10 @@ describe('Quest Module', () => {
         await request.post('/heros/:id/quests')
         .send({
             name: "Get Pickaxe",
-            description: "Use abilities to get pickaxe"
+            description: "Use abilities to get pickaxe",
+            heroId: 'abc'
         });
         const res = await request.get('/heroes/:id/quests')
-        ID = res.body[0].id;
+        ID = res.body[0].id; //id of the quest
     });
 });

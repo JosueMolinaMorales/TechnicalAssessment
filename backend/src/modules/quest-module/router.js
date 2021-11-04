@@ -1,4 +1,5 @@
 import express from 'express';
+import { HeroesDB } from '../../database/HeroesDB.js';
 import { QuestsDB } from '../../database/QuestsDB.js';
 import { Quest } from '../../types/Quest.js';
 
@@ -10,11 +11,11 @@ export function questsRouter() {
      * Get Quests for a hero
      */
     router.get('/heroes/:id/quests', (req, res) => {
-        const heroId = req.params.heroId;
+        const heroId = req.params.id;
         const quests = QuestsDB.getInstance().getHeroQuests(heroId);
 
-        if(!quests){
-            res.sendStatus(404);
+        if(!HeroesDB.getInstance().getHero(heroId)){ 
+            res.sendStatus(404);//send 404 if hero was not found with given id
         }else{
             res.send(quests);
         }
@@ -32,6 +33,9 @@ export function questsRouter() {
     })
 
     // TODO: Task 3
+    /**
+     * 
+     */
 
     // TODO: Task 4
 

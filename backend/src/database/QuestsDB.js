@@ -2,7 +2,12 @@ import {Quest} from "../types/Quest.js";
 
 export class QuestsDB{
     static instance = undefined;
-    quests = []; //quest array
+    quests = [
+        {id:"1quest", 
+        name:'open chest', 
+        description:"Open your first chest",
+        heroId: "123"}
+        ]; //quest array
 
     /**
      * Gets an instance of the database

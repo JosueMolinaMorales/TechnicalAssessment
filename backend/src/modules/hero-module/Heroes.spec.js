@@ -8,13 +8,18 @@ let ID = '';
 describe('Heroes Module', () => {
     beforeAll(async () => {
         // Get a hero id to use for getting/updating/deleting
-        await request.post('/heroes')
+        await request.post('/heroes') 
             .send({
                 name: 'He Man',
                 class: 'Barbarian',
                 level: 50,
             });
-        const res = await request.get('/heroes');
+        /*
+        in router.js for hero, router.get('/heroes') will return an array
+        of all the heros, since this is the only hero in the DS, body[0] gets
+        the hero we just placed in there and gets the ID
+        */
+        const res = await request.get('/heroes'); 
         ID = res.body[0].id;
     });
 

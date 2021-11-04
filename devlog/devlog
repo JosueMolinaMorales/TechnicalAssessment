@@ -64,6 +64,12 @@ Backend: Using NodeJS and Express
       I figured out that since getQuests() returns an empty array if no quests are found, 
       if(!quests) was always going to be false since quests would never be undefined so i changed the if to if(quests.length == 0) to say if there are no quests then 404 not found. This worked but did not handle the case where a given heroId was valid but had no quests, it would return 404 not found, when it should return an empty array.
       To fix this i changed the if statement to if(!HeroesDB.getInstance().getHero(heroId)).
+
+      At the end of task 1 I started using postman to help me test all the routers
+
+      Task 2 -> Creating a quest -> 201 Quest was added -> 404 Hero was not found for given ID
+      To Start this, i first got familiar with how to POST something in postman. and tested out the hero router by creating a couple of heros.
+      Coded out router.post() to create a quest. Didn't have too many issues.
       
   
 Frontend:

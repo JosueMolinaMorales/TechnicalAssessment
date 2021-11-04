@@ -25,18 +25,26 @@ export function questsRouter() {
     /**
      * Creating a quest for a hero
      */
-    router.post('/hereos/:id/quests', (req, res) => {
-        const body = req.body;
-        const quest = new Quest(body);
-        QuestsDB.getInstance().addQuest(quest);
-        res.sendStatus(201);
+    router.post('/heroes/:id/quests', (req, res) => {
+        const body = req.body; //get info for quest (name, des)
+        const heroId = req.params.id; //get heroId from :id
+
+        if(!HeroesDB.getInstance().getHero(heroId)){ //if hero does not exist
+            res.sendStatus(404);
+        }else{ //hero exists
+            const quest = new Quest(body, heroId); //create quest
+            QuestsDB.getInstance().addQuest(quest);
+            res.sendStatus(201);
+        }
     })
 
     // TODO: Task 3
     /**
-     * 
+     * Updating a quest for a hero
      */
-
+    router.patch('/heroes/:id/quests/:questid', (req, res) => {
+        
+    });
     // TODO: Task 4
 
     return router;

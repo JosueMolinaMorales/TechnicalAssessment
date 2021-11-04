@@ -54,5 +54,12 @@ Backend: Using NodeJS and Express
     Added Quest.js which is a class for quest objects that will be stored in QuestDS.js
     Coded out QuestDS.js with help from HeroDS.js
     
+  November 4th 2021
+      Got a better understanding of what the tasks were asking me to do. 
+      Task 1 -> Getting quests for a hero. Will be given a heros ID and you need to return an array of all the heros quests, misunderstood that yesterday.
+      I redid a method getHeroQuest() to getHeroQuests() and looped through the quest array and if a quest hero id match the id given, store in array that 
+      will be returned
+      Not sure how i would test this. 
+      
   
 Frontend:

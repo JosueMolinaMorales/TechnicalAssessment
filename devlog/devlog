@@ -89,3 +89,8 @@ Backend: Using NodeJS and Express
       Finished all 4 backend tasks!
   
 Frontend:
+  To Understand this part, I will spend some time reading Angular docs.
+  *ngFor repeats for each product in the list
+  {{ hero.name }} statement is an example of Angular's interpolation syntax. Interpolation {{ }} lets you render the property value as text
+  To make each hero name a link to hero details, add the <a> element around {{ hero.name }}
+  

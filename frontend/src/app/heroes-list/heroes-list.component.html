@@ -1,5 +1,12 @@
 <h1>Hero List</h1>
+<div *ngFor="let hero of heroes">
 <ul>
     <!--Displays a list of hero names-->
-    <li *ngFor="let hero of heroes">{{ hero.name }}</li>
+    <li>
+        <a routerLink="/hero-list-components" routerLinkActive="active">
+            {{ hero.name }}
+        </a>
+    </li>
 </ul>
+
+</div>

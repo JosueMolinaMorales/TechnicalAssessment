@@ -1,15 +1,15 @@
 1.	What do you enjoy the most about software development?
-        What I enjoy the most about software development is that you are constantly learning and never feel like you know it all. There is always something new to be learned.
-        When it comes to software development, there is not one single track. You could focus in on designing, coding, security and other fields within software development. 
-        Software development has helped me become a better problem solver. I have gained better researching skills ever since I started software development. I do not always know how to 
+        What I enjoy the most about software development is that you are constantly learning. There is always something new to be learned, the field of software development is ever changing.
+        When it comes to software development, there is not one single track. You could focus in on designing, coding, security or other fields within software development. 
+        Software development has helped me become a better problem solver. Since I started software development, I have gained better researching skills. I do not always know how to 
         squish a bug, so being able to research a solution and growing from that is a great feeling.
 
 
 2.	Describe your ideal career progression, if there were no limitations.
-        My ideal career, if there were no limitations, would be starting my career at any company, learning and growing in that company. After a couple of years in the industry, I would 
-        want to create my own start up and develop an application that helps first generation Hispanic college students who's parents don't understand everything their is about college. 
-        I would want this application to help parents understand what college is, how it can help their child in the future, colleges near them, tuition, scholarships, and more. Being a first 
-        generation Hispanic college student, my parents were not able to help me when it came to applying for college, filling out the FAFSA form, or understanding scholarships. I would like to be able
-        to help these families. I would like to start small, and continue to grow the company, by hiring more developers, translators, etc. 
+        My ideal career, if there were no limitations, would be starting at a company that has a focus in space exploration. I would spend a couple years learning and growing in that company. 
+        After, I would want to create my own start up and develop an application to help first generation Hispanic college students whose parents do not understand all of the aspects of college. 
+        I would want this application to help parents understand what college is, how it can help their child in the future, find colleges near them, what tuition is, researching scholarships, and more. Being a first 
+        generation Hispanic college student, my parents were not able to help me when it came to applying for college, filling out the FAFSA, or understanding scholarships. I would like to help other families like my own. 
+        I would like to start small, and then continue to grow the company, by hiring more developers, translators, etc. 
         In the end, I would want to give back to my community.
 

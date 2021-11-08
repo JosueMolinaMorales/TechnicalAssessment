@@ -89,8 +89,19 @@ Backend: Using NodeJS and Express
       Finished all 4 backend tasks!
   
 Frontend:
-  To Understand this part, I will spend some time reading Angular docs.
-  *ngFor repeats for each product in the list
-  {{ hero.name }} statement is an example of Angular's interpolation syntax. Interpolation {{ }} lets you render the property value as text
-  To make each hero name a link to hero details, add the <a> element around {{ hero.name }}
+  November 4th
+    To Understand this part, I will spend some time reading Angular docs.
+    *ngFor repeats for each product in the list
+    {{ hero.name }} statement is an example of Angular's interpolation syntax. Interpolation {{ }} lets you render the property value as text
+    To make each hero name a link to hero details, add the <a> element around {{ hero.name }}
+  
+  November 7th
+    I have spent the last two days researching angular, reading about how routing works with the link that was provided.
+    After doing some reading on routes, i have a basic understanding that if i want to create another page i need to add it to a path in the route module.
+    the current router is -> path: '', component: HeroesListComponent I added 'list' instead of list and saw that if i typed localhost:4200/list the list was moved to 
+    this page.
+    I was able to have each hero name to be an event, so that one you click on them they will open another page. 
+    The part I am currently stuck on is having a page for each hero listed. I created a Hero-Details component to help me with this.
+    Not sure how I would get a Hero id to this Hero-Details component so that i can call a function i created in backend.service.ts which will get the information of 
+    a hero from the id. (i think)
   

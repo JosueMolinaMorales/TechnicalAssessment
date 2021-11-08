@@ -18,4 +18,12 @@ export class BackendService {
   getHeroes(): Promise<Hero[]> {
     return this.http.get<Hero[]>(`${environment.api}/heroes`).toPromise();
   }
+
+  /**
+   * Gets a details of a hero
+   * @returns String containing hero details
+   */
+  getAHero(aHero: Hero): Promise<String>{
+    return this.http.get<String>(`${environment.api}/heroes/${aHero.id}`).toPromise();
+  }
 }

@@ -1,0 +1,71 @@
+Introduction to Components and Templates
+    A component is a fundamental building block of angular applications. They display data on the screen, listen for user input, and take action based on that input
+    app.component.ts - the component class code, written in TypeScript
+    app.component.html - the component template, written in html
+    app.component.css - The component's private CSS styles
+    Each component consists of:
+        An HTML template that declares what renders on the page -> .html
+        A TypeScript class that defines behavior -> .ts
+        
+
+    The double curly braces {{}} are Angular's interpolation binding syntax.
+    @component is a decorator function that specifies the Angular metadata for the component
+        Selector - the components CSS element selector
+        templateUrl - the location of the components template file
+        
+    ngOnInit() is a lifecycle hook. Angular called ngOnInit() shortly after creating a component. Its a good place to put initialization logic
+    Always export the component class so you can import it elsewhere
+
+    An interface is its own file in the src/app folder that will contain properties
+
+    AppModule
+    Angular needs to know how the pieces of your application fit together and what other files and libraries the application requires. This information is called metadata
+    Some of the metadata is in the @component decorators that you added to your component classes. Other critical metadata is in @NgModule decorators
+
+HTTP Services
+    HttpClient is Angular's mechanism for communication with a remote server over HTTP. Make HttpClient available everywhere in the applications in two steps:
+        First, add it to the root AppModule by importing it
+        Next, add HttpClientModule to the imports array
+
+@Input Decorator
+    Parent to Child using the input decorator
+        The input properties of a component are decorated with @input and are used to get data from the parent component
+    When you declare a variable with the input decorator in the child component, it allows that variable to be received from the parent template
+        EXAMPLE: child.component.ts
+            import { NgModule, Component, Input } from '@angular/core';
+
+            @Component({
+                selector: 'child-processor',
+                template: `You have new message : {{infoMessage}}`,
+                styleUrls: ['./child.component.css']
+            })
+            class ChildComponent {
+
+                @Input() infoMessage: string;
+
+                constructor() { }
+            }
+        In this case, we define a message variable in the parent, then use square brackets to pass the data to the child. Now the child can display this data in its template
+        Parent.component.ts
+            
+        import { Component OnInit } from '@angular/core';
+
+        @Component({
+            selector: 'parent-processor',
+            template: ` <input type="text" placeholder="Enter Message" (change)="onInputEvent($event)"><br/>
+                        <child-processor [infoMessage]="message"></child-processor>
+                    `
+            styleUrls: ['./parent.component.css'] 
+        })
+        class ParentComponent implements OnInit {
+
+            message: string;
+
+            constructor() { }
+            ngOnInit() { }
+
+            onInputEvent({target}) : void {
+                this.message = target.value;
+            }
+        }
+

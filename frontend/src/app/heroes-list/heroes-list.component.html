@@ -3,10 +3,13 @@
 <ul>
     <!--Displays a list of hero names-->
     <li>
-        <a routerLink="/hero-detail-components" routerLinkActive="active">
+        <a routerLink="/hero/{{hero.id}}" routerLinkActive="active">
             {{ hero.name }}
         </a>
+        
     </li>
+    
 </ul>
-
+    <app-heroes-detail [hero]="[hero]"></app-heroes-detail>
 </div>
+

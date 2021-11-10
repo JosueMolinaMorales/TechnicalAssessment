@@ -10,12 +10,12 @@ import { BackendService } from "../services/backend.service";
 })
 export class HeroDetailComponent implements OnInit{
     
-    //defines a property hero with an input decorator
-    //The input decorator indicates that the property value passess in from the component's parent, HeroListComponent
-    @Input() hero!: HeroesListComponent;
-    
+    @Input() hero:Hero = {name: "", level:0, class: "", id: ""}
     constructor(private backend: BackendService) { }
-    ngOnInit(): {
-        
+    
+    
+    async ngOnInit(): Promise<void>{
+        //this.test = await this.backend.getAHero(this.heroes[0]);
+        //this.hero = this.backend.getAhero(aHero)
     }
 }

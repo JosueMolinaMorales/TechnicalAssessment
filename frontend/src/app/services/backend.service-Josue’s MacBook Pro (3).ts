@@ -33,6 +33,6 @@ export class BackendService {
    * @param hero the hero to add to the database
    */
   createAHero(hero: Hero): Promise<Hero>{
-    return this.http.post<Hero>(`${environment.api}/heroes`, hero).toPromise();
+    return this.http.post<Hero>('${environment.api}/heroes/${heroId}', hero).toPromise();
   }
 }

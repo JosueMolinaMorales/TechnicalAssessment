@@ -1,0 +1,17 @@
+<h1>Hero List</h1>
+<div *ngFor="let hero of heroes">
+<ul>
+    <!--Displays a list of hero names-->
+    <li>
+        <a routerLink="/hero/{{hero.id}}" routerLinkActive="active">
+            {{ hero.name }}
+        </a>
+            
+    </li>
+    
+</ul>
+
+</div>
+
+
+<button type="button" (click)="runClick()">Create A Hero!</button>

@@ -20,5 +20,9 @@ export class HeroesListComponent implements OnInit {
     
   }
 
+  async runClick(){
+    await this.backend.createAHero({name:"Test", level:10, class:"", id: ""})
+  }
+
   
 }

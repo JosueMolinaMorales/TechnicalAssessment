@@ -21,9 +21,18 @@ export class BackendService {
 
   /**
    * Gets a details of a hero
+   * @param heroId a string that contains the id of the hero that you are trying to find
    * @returns String containing hero details
    */
   getAHero(heroId: string | null): Promise<Hero>{
     return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise();
+  }
+
+  /**
+   * Create a hero
+   * @param hero the hero to add to the database
+   */
+  createAHero(hero: Hero): Promise<Hero>{
+    return this.http.post<Hero>('${environment.api}/heroes/${heroId}', hero).toPromise();
   }
 }

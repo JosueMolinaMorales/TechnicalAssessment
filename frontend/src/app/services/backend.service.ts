@@ -23,7 +23,7 @@ export class BackendService {
    * Gets a details of a hero
    * @returns String containing hero details
    */
-  getAHero(aHero: Hero): Promise<String>{
-    return this.http.get<String>(`${environment.api}/heroes/${aHero.id}`).toPromise();
+  getAHero(heroId: string | null): Promise<Hero>{
+    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise();
   }
 }

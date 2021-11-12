@@ -10,14 +10,14 @@ import { Hero } from '../types/Hero';
 export class HeroesListComponent implements OnInit {
 
   heroes: Hero[] = [];
-  aHero: Hero = {name: "", level:0, "class": "", id: ""};
+  aHero: Hero = {name: "", level:0, class: "", id: ""};
 
   constructor(private backend: BackendService) { }
 
   async ngOnInit(): Promise<void> {
     // Gets a list of heroes to display
     this.heroes = await this.backend.getHeroes();
-    this.aHero = this.heroes[0];
+    
   }
 
   

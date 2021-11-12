@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Hero } from "../types/Hero";
-import { HeroesListComponent } from "../heroes-list/heroes-list.component";
+import { ActivatedRoute } from "@angular/router";
 import { BackendService } from "../services/backend.service";
 
 @Component({
@@ -10,12 +10,15 @@ import { BackendService } from "../services/backend.service";
 })
 export class HeroDetailComponent implements OnInit{
     
-    @Input() hero:Hero = {name: "", level:0, class: "", id: ""}
-    constructor(private backend: BackendService) { }
+    @Input() hero: Hero = {name: "", id: "123", level: 0, class: ""};
+    id: string | null = "";
+    constructor(private backend: BackendService, private route: ActivatedRoute) { }
     
     
     async ngOnInit(): Promise<void>{
         //this.test = await this.backend.getAHero(this.heroes[0]);
-        //this.hero = this.backend.getAhero(aHero)
+        this.id = this.route.snapshot.paramMap.get("id");
+        if(this.id)
+            this.hero = await this.backend.getAHero(this.id)
     }
 }

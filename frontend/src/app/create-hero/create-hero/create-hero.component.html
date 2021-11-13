@@ -1,1 +1,12 @@
-<p>create-hero works!</p>
+<div>
+    <p>Enter a Hero Name!</p>
+    <input type="text" placeholder="Hero Name" #heroname>
+    
+    <p>Enter the hero's class</p>
+    <input type="text" placeholder="Hero Class" #heroclass>
+
+    <p>Enter The Hero's Level!</p>
+    <input type="text" placeholder="Hero Level" #herolevel> <br>
+
+    <button [routerLink]="'/'" type="submit" (click)="createHero(heroname.value, heroclass.value, +herolevel.value)" >Create Hero!</button>
+</div>

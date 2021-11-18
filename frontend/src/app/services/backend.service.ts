@@ -42,7 +42,7 @@ export class BackendService {
     return this.http.post<Hero>(`${environment.api}/heroes`, hero).toPromise();
   }
 
-  updateAHero(heroId: string, partialHero: string): Promise<Hero>{
+  updateAHero(heroId: string, partialHero: Partial<Hero>): Promise<Hero>{
     return this.http.patch<Hero>(`${environment.api}/heroes/${heroId}`, partialHero).toPromise();
   }
 

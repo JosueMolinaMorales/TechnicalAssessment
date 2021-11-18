@@ -32,7 +32,7 @@ export class UpdateHeroComponent implements OnInit {
 
   async updateHero(){
     //window.alert("ID: " + this.id + " New name is: " + this.hero.name);
-    await this.backend.updateAHero(String(this.id),JSON.stringify(this.hero));
+    await this.backend.updateAHero(String(this.id),this.hero);
     this.goBackToHomePage();
   }
 

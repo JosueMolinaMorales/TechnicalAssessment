@@ -27,11 +27,7 @@ export class BackendService {
    * @returns a Hero
    */
   async getAHero(heroId: string | null): Promise<Hero>{
-    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise().catch<Hero>(err => {
-      window.alert("ERROR, No hero found with ID: " + heroId);
-      this.router.navigate(['/']);
-      return {name: "", id: "", level: 0, class:""};
-    });
+    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise();
   }
 
   /**
@@ -46,11 +42,17 @@ export class BackendService {
     return this.http.patch<Hero>(`${environment.api}/heroes/${heroId}`, partialHero).toPromise();
   }
 
-  doesHeroExist(heroId: string){
-    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise().catch<Hero>(err => {
-      window.alert("ERROR, No hero found with ID: " + heroId);
+  async doesHeroExist(heroId: string){
+    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise().catch<Boolean>(err => {
       this.router.navigate(['/']);
-      return {name: "", id: "", level: 0, class:""};
+      window.alert("ERROR, No hero found with ID: " + heroId);
+      return false;
     })
   }
+
+  async deleteAhero(heroId: string): Promise<Hero>{
+    return this.http.delete<Hero>(`${environment.api}/heroes/${heroId}`).toPromise();
+  }
 }
+
+

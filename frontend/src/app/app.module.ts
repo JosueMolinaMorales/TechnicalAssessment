@@ -8,6 +8,7 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { HeroDetailComponent } from './heroes-detail/heroes-detail.component';
 import { CreateHeroComponent } from './create-hero/create-hero/create-hero.component';
 import { UpdateHeroComponent } from './update-hero/update-hero.component';
+import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UpdateHeroComponent } from './update-hero/update-hero.component';
     HeroDetailComponent,
     CreateHeroComponent,
     UpdateHeroComponent,
+    DeleteHeroComponent,
   ],
   imports: [
     BrowserModule,

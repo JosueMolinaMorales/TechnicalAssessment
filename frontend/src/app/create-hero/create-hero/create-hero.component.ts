@@ -39,10 +39,14 @@ export class CreateHeroComponent implements OnInit {
   }
 
   async createHero(){
+    this.heroCreated = true;
     await this.backend.createAHero(this.newHero); 
   }
 
   goBackToHomePage(){
-    this.router.navigate(['/']);
+    if(this.heroCreated)
+      this.router.navigate(['/']);
+    else
+      window.alert("Please enter data into all fields");
   }
 }

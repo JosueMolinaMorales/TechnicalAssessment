@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Hero } from '../types/Hero';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class BackendService {
    * @param heroId a string that contains the id of the hero that you are trying to find
    * @returns a Hero
    */
-  getAHero(heroId: string | null): Promise<Hero>{
+  async getAHero(heroId: string | null): Promise<Hero>{
     return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise().catch<Hero>(err => {
       window.alert("ERROR, No hero found with ID: " + heroId);
       this.router.navigate(['/']);
@@ -39,5 +40,17 @@ export class BackendService {
    */
   createAHero(hero: Hero): Promise<Hero>{
     return this.http.post<Hero>(`${environment.api}/heroes`, hero).toPromise();
+  }
+
+  updateAHero(heroId: string, partialHero: string): Promise<Hero>{
+    return this.http.patch<Hero>(`${environment.api}/heroes/${heroId}`, partialHero).toPromise();
+  }
+
+  doesHeroExist(heroId: string){
+    return this.http.get<Hero>(`${environment.api}/heroes/${heroId}`).toPromise().catch<Hero>(err => {
+      window.alert("ERROR, No hero found with ID: " + heroId);
+      this.router.navigate(['/']);
+      return {name: "", id: "", level: 0, class:""};
+    })
   }
 }

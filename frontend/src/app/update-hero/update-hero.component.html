@@ -1,0 +1,14 @@
+<h1>Update A Hero!</h1>
+<div>
+    <p>Enter Hero's New Name</p>
+    <input type="text" placeholder="John Doe" #name (change)="updateName(name.value)"> <br>
+
+    <p>Enter Hero's New Class</p>
+    <input type="text" placeholder="Fighter" #Hclass (change)="updateClass(Hclass.value)"> <br>
+
+    <p>Enter Hero's New Level</p>
+    <input type="text" placeholder="0" #Hlevel (change)="updateLevel(+Hlevel.value)"> <br>
+
+    <input type="button" value="Update Hero!" (click)="updateHero()">
+    
+</div>

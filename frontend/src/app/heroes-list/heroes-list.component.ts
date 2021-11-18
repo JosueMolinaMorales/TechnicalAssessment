@@ -20,9 +20,5 @@ export class HeroesListComponent implements OnInit {
     
   }
 
-  runClick(){
-    
-  }
-
   
 }

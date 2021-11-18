@@ -12,11 +12,10 @@ export class HeroDetailComponent implements OnInit{
     
     @Input() hero: Hero = {name: "", id: "123", level: 0, class: ""};
     id: string | null = "";
-    constructor(private backend: BackendService, private route: ActivatedRoute, private router: Router) { }
+    constructor(private backend: BackendService, private route: ActivatedRoute) { }
     
     
     async ngOnInit(): Promise<void>{
-        //this.test = await this.backend.getAHero(this.heroes[0]);
         this.id = this.route.snapshot.paramMap.get("id");
         
         if(this.id){

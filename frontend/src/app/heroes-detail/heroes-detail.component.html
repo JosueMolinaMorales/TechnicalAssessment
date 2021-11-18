@@ -1,6 +1,6 @@
-<p>
+<h1>
     Hero Information:
-</p>
+</h1>
 <div>
     <p>
         Hero Name: {{hero.name}}
@@ -15,3 +15,10 @@
         Hero Class: {{hero.class}}
     </p>
 </div>
+
+<h2>
+    Update Hero:
+</h2>
+<form action="http://localhost:4200/hero/update/{{hero.id}}">
+    <button type="submit" value="Update the hero">Update The Hero</button>
+</form>

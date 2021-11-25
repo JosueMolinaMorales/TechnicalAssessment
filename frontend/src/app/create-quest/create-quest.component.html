@@ -1,0 +1,15 @@
+<div>
+    <h1>
+        Create a Quest!
+    </h1>
+
+    <p>Name of quest: </p>
+    <input type="text" placeholder="Quest name" #questName (change)="addName(questName.value)" >
+    <br>
+    <p>Description of quest: </p>
+    <input type="text" placeholder="Description" #questDes (change)="addDescription(questDes.value)" >
+
+    <p>Create Quest!</p>
+    <button type="button" (click)="goBackHome()">Submit Quest</button>
+    
+</div>

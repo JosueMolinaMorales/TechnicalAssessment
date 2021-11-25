@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Hero } from '../types/Hero';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Quest } from '../types/Quest';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,10 @@ export class BackendService {
 
   async deleteAhero(heroId: string): Promise<Hero>{
     return this.http.delete<Hero>(`${environment.api}/heroes/${heroId}`).toPromise();
+  }
+
+  async createAQuest(heroId: string, aQuest: Quest): Promise<Quest>{
+    return this.http.post<Quest>(`${environment.api}/heroes/${heroId}/quests`, aQuest).toPromise();
   }
 }
 

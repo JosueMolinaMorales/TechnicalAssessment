@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HeroesListComponent },
   { path: 'hero/:id', component:  HeroDetailComponent},
   { path: 'create', component: CreateHeroComponent},
-  { path: 'hero/:id/update', component: UpdateHeroComponent},
+  { path: 'hero/update/:id', component: UpdateHeroComponent},
   { path: 'hero/:id/quest/create', component: CreateQuestComponent}
 ];
 

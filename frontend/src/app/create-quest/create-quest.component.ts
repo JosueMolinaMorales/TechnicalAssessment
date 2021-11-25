@@ -31,8 +31,15 @@ export class CreateQuestComponent implements OnInit {
     this.isQuestReady();
   }
 
-  isQuestReady(){
-    
+  async isQuestReady(){
+    if(this.newQuest.description.length != 0 && this.newQuest.name.length != 0){
+      this.questAdded = true;
+      await this.backend.createAQuest(String(this.heroId), this.newQuest);
+    }
+  }
+
+  goBackHome(){
+    this.router.navigate(['/']);
   }
 
 
